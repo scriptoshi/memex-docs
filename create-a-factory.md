@@ -1,8 +1,8 @@
 ---
-description: >-
-  The current connected wallet will be used ast he owner/deployer address. Any
-  updated the factory will need to send from this wallet address
 icon: wave-square
+description: >-
+  The current connected wallet will be used as the owner/deployer address. Any
+  updates to the factory will need to be sent from this wallet address
 ---
 
 # Create a factory
@@ -15,7 +15,7 @@ The create factory ui provides an interface for deploying and configuring your b
 
 ### Basic Information
 
-#### Factory Name
+#### <mark style="color:yellow;">Factory Name</mark>
 
 * Located at the top of the form
 * Enter a simple label for your private use
@@ -24,27 +24,27 @@ The create factory ui provides an interface for deploying and configuring your b
 
 ### Economic Parameters
 
-#### Deployment Fees (ETH)
+#### <mark style="color:yellow;">Deployment Fees (ETH)</mark>
 
 * The cost to deploy a new bonding curve through your factory
 * This fee will be paid by projects launching through your factory
 * Consider market conditions when setting this value.
 
-#### Virtual Liquidity (ETH)
+#### <mark style="color:yellow;">Virtual Liquidity (ETH)</mark>
 
 * The initial virtual ETH backing the bonding curve
 * Virtual ETH determines the initial price of the Tokens via the AMM constant product model, so the final effect is similar to providing liquidity of total tokens and virtual ETH amount
 * Higher values create more price stability
 * Affects initial token price and curve behavior during bonding.
 
-#### Bonding Target (ETH/BNB/SOL etc)
+#### <mark style="color:yellow;">Bonding Target (ETH/BNB/SOL etc)</mark>
 
 * Total Native amount to be collected before curve finalization and liquidity migration
 * The amount determines the final marketcap at bonding close.
 * Ensure the  bonding tartget is  greater than Virtual ETH
 * Determines when the curve can transition to Uniswap V3
 
-#### Minimum Contribution (ETH)
+#### <mark style="color:yellow;">Minimum Contribution (ETH)</mark>
 
 * Smallest allowed contribution (BUY) amount for thr launchpad. while the sale can be small this forces all buys to be at least this amount.
 * Prevents dust transactions
@@ -52,14 +52,14 @@ The create factory ui provides an interface for deploying and configuring your b
 
 ### Fee Structure
 
-#### Uniswap Pool Percentage Fees
+#### <mark style="color:yellow;">Uniswap Pool Percentage Fees</mark>
 
 * Fee tier for the eventual Uniswap V3 pool in BIPS
 * This is basically common percent X 10000 to allow for small precentage fee fractions eg 0.1%
 * Use the Standard options: 0.01%, 0.05%, 0.3%, 1% based on the uniswap pools fee structure
 * Higher fees = more earnings but less trading volume
 
-#### Sell Token Fees
+#### <mark style="color:yellow;">Sell Token Fees</mark>
 
 * Fee charged when users sell tokens on the bonding curve
 * Applied before Uniswap migration
@@ -67,7 +67,7 @@ The create factory ui provides an interface for deploying and configuring your b
 
 ### Advanced Settings
 
-#### UniswapV3 Addresses
+#### <mark style="color:yellow;">UniswapV3 Addresses</mark>
 
 WARNING: Do not modify these unless you absolutely know what you're doing!
 
