@@ -1,8 +1,8 @@
 ---
-description: >-
-  The Deployed factory is decentralized an can be manages from any web3 ui. This
-  guide uses the admin
 icon: nfc
+description: >-
+  The Deployed factory is decentralized an can be managed from any web3 ui. This
+  guide uses the admin gui.
 ---
 
 # Manage factory

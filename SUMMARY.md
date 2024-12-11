@@ -10,3 +10,4 @@
 * [Header Promos](header-promos.md)
 * [Launchpad Economics](launchpad-economics.md)
 * [Admin Settings.](admin-settings..md)
+* [s3 Storage](s3-storage.md)

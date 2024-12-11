@@ -1,6 +1,6 @@
 ---
-description: There is at random slot in the header to run some promotions.
 icon: repeat
+description: There is a random slot in the header to run some promotions.
 ---
 
 # Header Promos
