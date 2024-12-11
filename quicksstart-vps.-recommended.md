@@ -83,10 +83,10 @@ description: >-
        npm run production
        ```
 7. **Configure Environment Variables**:
-   *   rename the `env.file` file to `.env`:
+   *   rename the `env.example` file to `.env`:
 
        ```bash
-       cp .env.file .env
+       cp .env.example .env
        ```
    *   Update `.env` with your database and other configuration details:
 
