@@ -1,8 +1,8 @@
 ---
+icon: user-beard-bolt
 description: >-
   This guide is for installion on a digital ocean droplet, linode or ec2
   machine. The installation guide assumes your are using Ubuntu 24.04 and LAMP
-icon: user-beard-bolt
 ---
 
 # Quicksstart VPS. (Recommended)
@@ -100,11 +100,11 @@ icon: user-beard-bolt
 
        #APIKEYS
        #usdrates api (free apikey https://coincap.io/api-key)
-       COINCAP_APIKEY="55014acc-82b7-4970-9ca1-c042809054da"
+       COINCAP_APIKEY="55014acc-....-c042809054da"
        #appkit project id: https://cloud.reown.com/
-       PROJECT_ID="0908f6dccf88caf94e3bfa07b199620c"
+       PROJECT_ID="0908f6dccf.....a07b199620c"
        ## Ankr apikey https://www.ankr.com/rpc/projects/
-       ANKR_KEY="601613d5ca8940eb2b6a2e779173080586b0a031319a557c50690e421efc9d81"
+       ANKR_KEY="601613d5ca8940e....0690e421efc9d81"
 
        #ADMIN-ACCESS
        ADMIN="0xcf01271DC73639843e95C24F7FA3C0b11A1a9B27"
@@ -190,15 +190,37 @@ sudo nano /etc/cron.d/laravel-scheduler
 sudo chmod 644 /etc/cron.d/laravel-scheduler
 ```
 
-### BACKGROUND SERVICES.
+### SETUP LARAVEL REVERB.
 
-You need to setup supervisor to run queue:work and reverb:start. We include a bash script to get you up and running. make sure you are in your site directory. This will rig and start all the supervisor processes needed to get the site up and running. correctly
+You need to setup supervisor to run reverb:start. We include a bash script to get you up and running. make sure you are in your site directory. This will rig and start all the supervisor processes needed to get reverb up and running. correctly
 
 ```bash
 #cd to your site directory EG.cd /var/www/memex.com
 cd /var/www/memex.io
-chmod +x supervisord.sh
-sudo ./supervisord.sh
+chmod +x laravel-reverb-setup.sh
+sudo bash ./laravel-reverb-setup.sh
 ```
 
 ***
+
+Update `.env`
+
+```bash
+#update REVERB_HOST with your plain domain.
+#Donot add a slash after or http(s). eg scriptoshi.com, memex.website.com etc
+REVERB_HOST="scriptoshi.com"
+
+```
+
+
+
+### Laravel Queue Workers.
+
+The app users queues for events for Jobs, Events and Notification.  Queue workers are monitored by supervisord. We have created  bash script that will configure supervisord to monitor your queues. here's how to run it.
+
+```bash
+#cd to your site directory EG.cd /var/www/memex.io
+cd /var/www/memex.io
+chmod +x queue-worker-setup.sh
+sudo bash./queue-worker-setup.sh
+```
