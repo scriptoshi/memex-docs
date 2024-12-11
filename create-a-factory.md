@@ -91,7 +91,7 @@ These are the addresses of the uniswpv3 compartible swap that liquidity will be 
 1. Review all parameters carefully
 2. Click "Deploy Factory" button
 3. Confirm transaction in your wallet
-4. The foundry  will deploy 4 contracts.  The foundry requires a gas refund of 6-15$ depeninf on the gas price and network you are deploying to. Ensure you have enough ETH/BNB
+4. The foundry  will deploy 4 contracts.  The foundry requires a gas refund of 6-15$ depending on the gas price and network you are deploying to. Ensure you have enough ETH/BNB
 
 * <mark style="color:orange;">Factory.sol</mark>
 * <mark style="color:orange;">TokenImplementation.sol</mark>
