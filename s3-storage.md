@@ -1,3 +1,7 @@
+---
+icon: cart-flatbed-boxes
+---
+
 # s3 Storage
 
 ### Overview
