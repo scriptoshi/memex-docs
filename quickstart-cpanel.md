@@ -1,9 +1,9 @@
 ---
+icon: face-glasses
 description: >-
   While the software could theorectically run on shared hosting , we don't
   advice it for production, since a few things will not work out of the box
   wothout a hacky workaround
-icon: face-glasses
 ---
 
 # Quickstart Cpanel
@@ -19,7 +19,7 @@ Create a fresh database, choose `utf8mb4_general_ci` character encoding and add 
 
 ### 2. Unzip and upload server files
 
-Extract the file you downloaded. In the extracted directory find **memex-server.zip,** upload this to the root folder of your domain. Extract the contents of **memex-server.zip** here.
+Extract the file you downloaded from github. You can also simply clone the repo and zip it up. **,** upload this zip to the root folder of your domain and Extract the contents  the **zip** there.
 
 ### 3. **Change Your Document Root**
 

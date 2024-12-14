@@ -24,11 +24,11 @@ description: >-
    * **Composer**: A dependency manager for PHP, required to install PHP packages.
    * **Node.js and NPM**: Node Package Manager, required for frontend assets.\\
 
-**Detailed Steps:**
+**Detailed Steps: We shall be deploying to a domain&#x20;**_<mark style="color:red;">**"memex.io"**</mark>_
 
 1. **Set Up Your Web Root**:
    * Point your Apache web server’s DocumentRoot to the `public` directory inside your site directory.
-   * Example for Apache configuration for memex.io site.
+   * Example for Apache configuration for memex.io site. replace memex.io with your own domain.
    *   (`/etc/apache2/sites-available/memex.io.conf`):
 
        ```apacheconf
@@ -50,8 +50,13 @@ description: >-
     <pre class="language-bash"><code class="lang-bash"><strong>sudo a2ensite memex.io.conf
     </strong>sudo systemctl reload apache2
     </code></pre>
-3. **Extract the Application Files**:
-   * Upload `memex-vps.zip` to your `/var/www/` directory.
+3. **Clone The repo. to you site folder**
+   1. <pre class="language-bash"><code class="lang-bash">cd /var/www/
+      <strong>git clone https://github.com/scriptoshi/memex.git  memex.io
+      </strong><strong>// In apache config above DocumentRoot is /var/www/memex.io
+      </strong></code></pre>
+4. **If you cannot clone above, simply download from github and extract the Application Files**:
+   * Dowload memex files  and Upload the zip your to your `/var/www/` directory.
    *   Extract the zip file:
 
        ```bash
@@ -62,27 +67,27 @@ description: >-
        ```bash
        sudo mv /var/www/Memex /var/www/memex.io
        ```
-4. **Navigate to the Site Directory**:
+5. **Navigate to the Site Directory**:
    *   Change directory to your newly created site folder:
 
        ```bash
        cd /var/www/memex.io
        ```
-5. **Install PHP Dependencies**:
+6. **Install PHP Dependencies**:
    *   Run Composer to install the necessary PHP packages:
 
        ```bash
        composer install
        ```
    * This will create a `vendor` directory containing all the required PHP packages.
-6. **Set Up Frontend Assets**:
+7. **Set Up Frontend Assets**:
    *   Run NPM to build frontend assets:
 
        ```bash
        npm install
        npm run production
        ```
-7. **Configure Environment Variables**:
+8. **Configure Environment Variables**:
    *   rename the `env.example` file to `.env`:
 
        ```bash
@@ -109,33 +114,33 @@ description: >-
        #ADMIN-ACCESS
        ADMIN="0xcf01271DC73639843e95C24F7FA3C0b11A1a9B27"
        ```
-8. **Generate Application Key**:
+9. **Generate Application Key**:
    *   Run the following command to generate a unique application key:
 
        <pre class="language-bash"><code class="lang-bash"><strong>php artisan key:generate
        </strong></code></pre>
-9. **Run Database Migrations and Seeders**:
-   *   Migrate the database tables and seed initial data:
+10. **Run Database Migrations and Seeders**:
+    *   Migrate the database tables and seed initial data:
 
-       ```bash
-       php artisan migrate --seed
-       ```
-10. **Set Folder Permissions**:
+        ```bash
+        php artisan migrate --seed
+        ```
+11. **Set Folder Permissions**:
     *   Ensure the necessary permissions for the `storage` and `bootstrap/cache` directories:
 
         ```bash
         sudo chmod -R 775 storage bootstrap/cache
         sudo chown -R www-data:www-data storage bootstrap/cache
         ```
-11. **Restart Apache**:
+12. **Restart Apache**:
     *   Finally, restart Apache to ensure all configurations are correctly applied:
 
         ```bash
         sudo systemctl restart apache2
         ```
-12. **Access the Site**:
+13. **Access the Site**:
     * Open your browser and navigate to your site’s URL (e.g., `http://memex.io`). Your site should now be live!
-13. **Clean up and fix a few things.**
+14. **Clean up and fix a few things.**
     *   If you are like me , you most likely use root, so some permission maybe messed up. \\
 
         ```bash
